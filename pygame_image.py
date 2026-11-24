@@ -10,12 +10,16 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg") # 練習1
+    kk_img_3 = pg.image.load("fig/3.png") # 練習3：こうかとんの画像の読み込み
+    kk_img_3 = pg.transform.flip(kk_img_3, True, False) # 練習3：こうかとん反転
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0]) # 練習2
+        screen.blit(kk_img_3, [300, 200]) # 練習4：こうかとんSurfaceの描画
+
         pg.display.update()
         tmr += 1        
         clock.tick(10)
